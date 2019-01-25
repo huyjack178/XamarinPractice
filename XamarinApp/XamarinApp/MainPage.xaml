@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinApp"
-             x:Class="XamarinApp.MainPage">
+             x:Class="XamarinApp.MainPage"
+             Title="Hello XAML Page">
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -10,12 +11,20 @@
             <On Platform="Android, UWP" Value="20" />
         </OnPlatform>
     </ContentPage.Padding>
-    <StackLayout>
+    <StackLayout Spacing="10">
         <Label Text="Enter a Phoneword:" />
         <Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
-        <Button Text="Translate" Clicked="OnTranslate" />
+        <Button Text="Translate" BackgroundColor="Red" Clicked="OnTranslate" />
         <Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
         <Button x:Name="callHistoryButton" Text="Call History" IsEnabled="false"
           Clicked="OnCallHistory" />
+        <Label Text="Hello, XAML!"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               Rotation="-15"
+               IsVisible="true"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="Blue" />
     </StackLayout>
 </ContentPage>
